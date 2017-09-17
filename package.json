@@ -42,5 +42,9 @@
         "single"
       ]
     }
+  },
+  "dependencies": {
+    "generator-angular": "^0.16.0",
+    "generator-karma": "^2.0.0"
   }
 }
