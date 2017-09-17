@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>Bot Chat</title><link href="https://cdn.botframework.com/botframework-webchat/latest/botchat.css" rel="stylesheet"><style>body,html{height:100%;margin:0;overflow:hidden;padding:0}</style><script src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js"></script></head><body><div id="BotChatGoesHere"></div><script>const params = BotChat.queryParams(location.search);
+
+      const user = {
+        id: params['userid'] || 'userid',
+        name: params['username'] || 'username'
+      };
+
+      const bot = {
+        id: params['botid'] || 'botid',
+        name: params['botname'] || 'botname'
+      };
+
+      window['botchatDebug'] = params['debug'] && params['debug'] === 'true';
+
+      BotChat.App({
+        bot: bot,
+        locale: params['locale'],
+        resize: 'window',
+        // sendTyping: true,    // defaults to false. set to true to send 'typing' activities to bot (and other users) when user is typing
+        user: user,
+
+        directLine: {
+          secret: params['EpVOUdqpG48.cwA.17s.tFCM5ssq_YTGRancwTEbejKpuWo5pGR_DyKKmmmG-IQ'],
+          token: params['t'],
+          domain: params['domain'],
+          webSocket: params['webSocket'] && params['webSocket'] === 'true' // defaults to true
+        }
+      }, document.getElementById('BotChatGoesHere'));</script></body></html>
