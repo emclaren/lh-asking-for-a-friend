@@ -5,7 +5,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Asking For a Friend</title>
-
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
 
@@ -19,16 +19,30 @@
     <!-- endbuild -->
     <link href="https://cdn.botframework.com/botframework-webchat/latest/botchat.css" rel="stylesheet" />
     
+
+       <script src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js"></script>
+
+
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
+
+        <script>
+      function toggleClassName(className) {
+        const BotChatGoesHere = document.getElementById('BotChatGoesHere');
+        ['wc-narrow', 'wc-normal', 'wc-wide'].forEach(function (c) {
+          BotChatGoesHere.classList.remove(c);
+        });
+        BotChatGoesHere.classList.add(className);
+      }
+    </script>
   </head>
  
 
 <body>
 
 
-<div id="bot"/>
+<!-- <div id="bot"/>
     <script src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js"></script>
     <script>
       BotChat.App({
@@ -38,7 +52,7 @@
         resize: 'detect'
       }, document.getElementById("bot"));
     </script>
-
+ -->
 
     <div class="site-wrapper">
 
@@ -48,7 +62,8 @@
 
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand">Asking for a friend</h3>
+            <img  class="site-logo" src="/images/logo2.png">
+            
             </div>
           </div>
 
@@ -57,36 +72,75 @@
             </br>
 
             <div class="white-background">
-            <iframe src='https://webchat.botframework.com/embed/lhbot_DnuyGTwTJ7r?s=qJ2G-aX6eBE.cwA.n3g.NGImnFdiSHdQUvtCT-uzSBXAnAC0Tlse0l-havh-JFM'></iframe>
+        <!--     <iframe src='https://webchat.botframework.com/embed/lhbot_DnuyGTwTJ7r?s=qJ2G-aX6eBE.cwA.n3g.NGImnFdiSHdQUvtCT-uzSBXAnAC0Tlse0l-havh-JFM'></iframe> -->
+        <div id="BotChatGoesHere"></div>
             </div>
             </br>
            </br>
-            <p class="lead">
-
+           <button type="button" class="btn" onclick="this.blur()" data-toggle="modal" data-target="#myModal">
+          
               <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
-            </p>
-          </div>       
-
+            </button>
+            </div>
+          </div>
         </div>
-
       </div>
-
     </div>
 
 
 
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Lorem At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repella </p>  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+   
+    <script>
+      const params = BotChat.queryParams(location.search);
+      const user = {
+        id: params['userid'] || 'userid',
+        name: params['username'] || 'username'
+      };
+      const bot = {
+        id: params['botid'] || 'botid',
+        name: params['botname'] || 'botname'
+      };
+      window['botchatDebug'] = params['debug'] && params['debug'] === 'true';
+      BotChat.App({
+        bot: bot,
+        locale: params['locale'],
+        resize: 'window',
+        // sendTyping: true,    // defaults to false. set to true to send 'typing' activities to bot (and other users) when user is typing
+        user: user,
+        directLine: {
+          secret: params['EpVOUdqpG48.cwA.17s.tFCM5ssq_YTGRancwTEbejKpuWo5pGR_DyKKmmmG-IQ'],
+          token: params['t'],
+          domain: params['domain'],
+          webSocket: params['webSocket'] && params['webSocket'] === 'true' // defaults to true
+        }
+      }, document.getElementById('BotChatGoesHere'));
+    </script>
 
 
 
 
-
-
-
-
-
-
-
-  <body>    
     <!-- <div class="containe"> -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
