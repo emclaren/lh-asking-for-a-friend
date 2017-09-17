@@ -1,4 +1,4 @@
-# lh-asking-for-a-friend
+# Asking for a friend - Lumohacks 2017
 
 
 Lumohacks 2017 24-hour Coding Challenge Submission 
