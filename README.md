@@ -14,5 +14,6 @@ AskingForAFriend is a resourcetool to assist those who are looking to receive he
 Bot was coded in node.js using Microsoft Azure Bot Framework, and could be easily integrated into social media networks such as Facebook messenger. This is saved in this repository under bot-code.js
 
 Project Demo : (https://github.com/emclaren/lh-asking-for-a-friend)
+
 Project Rationale : (https://github.com/emclaren/lh-asking-for-a-friend/blob/master/Lumohacks%202017-%20The%20Lumohackers.pdf)
 
